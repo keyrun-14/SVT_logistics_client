@@ -23,7 +23,10 @@ const FormTable = () => {
   return (
     <>
       <div className="FormTable">
-        <Link to="/">Add Data</Link>
+        <div className="add-data">
+        <Link to="/" className="add-data">Add Data</Link>
+        </div>
+       
         <table className="content-table">
           <thead>
             <tr><th>DATE</th>
@@ -41,6 +44,7 @@ const FormTable = () => {
               <th>FROM</th>
               <th>TO</th>
               <th>FROM_CONTAINER</th>
+              <th>TO_CONTAINER</th>
               <th>PACKS</th>
               <th>CONTAINER_SIZE</th>
               <th>FILLING_DETAILS</th>
