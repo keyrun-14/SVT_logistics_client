@@ -4,7 +4,7 @@ import "./FormData.css";
 const FormTable = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:5000/";
+    const url = "https://svt-logistics-server.herokuapp.com/";
 
     const fetchData = async () => {
       try {

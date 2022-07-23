@@ -1,40 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {  Link } from "react-router-dom";
 import "./Form.css";
 
 function Form() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const url = "http://localhost:5000/";
-    const fetchData = async () => {
-      try {
-        await fetch(url)
-          .then((res) => res.json())
-          .then((datas) => setData(datas));
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    fetchData();    
-  }, []);
-  //console.log(data)
-  // const productDetails={
-  //   DATE:"",SB_NO:"432",BE_NO:"123",CHA:"",LINER:"",CARGO:data[data.length-1].CARGO,PACK_WEIGHT:"",LABOUR:"",TYPE_OF_OPERATION:"",
-  //   Import_export:"Import",EXP_IMP_NAME:"",OPERATION:"",FROM:"",TO:"",FROM_CONTAINER:"",TO_CONTAINER:"",
-  //   PACKS:"",CONTAINER_SIZE:"",FILLING_DETAILS:""
-  // };
- //const [productDetails,setProductDetails]=useState (data[data.length-1]);
- let ob=data[data.length-1]
- console.log("object",ob)
+
    const [productDetails,setProductDetails]=useState ({
     DATE:"",SB_NO:"",BE_NO:"",CHA:"",LINER:"",CARGO:"",PACK_WEIGHT:"",LABOUR:"",TYPE_OF_OPERATION:"",
     Import_export:"",EXP_IMP_NAME:"",OPERATION:"",FROM:"",TO:"",FROM_CONTAINER:"",TO_CONTAINER:"",
     PACKS:"",CONTAINER_SIZE:"",FILLING_DETAILS:""
    });
-  console.log(productDetails)
-  // useEffect(()=>{
-  //   setProductDetails(data)
-  // },[data])
+
 function handlingInput(e){
     const inputData = {...productDetails}
      inputData[e.target.name] = e.target.value
@@ -46,24 +21,17 @@ function handlingInput(e){
     e.preventDefault();
      alert('A form was submitted: ' + JSON.stringify(productDetails));
 
-    fetch('http://localhost:5000/FormDetails', {
+    fetch('https://svt-logistics-server.herokuapp.com/FormDetails', 
+    {
+      // mode: 'no-cors',
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json',"Access-Control-Allow-Origin": "*"},
+        
         // We convert the React state to JSON and send it as the POST body
         body: JSON.stringify(productDetails)
       }).then(response => response.json())
       .then(data => console.log(data));  
   }
-  useEffect(()=>{
-    const formData=window.localStorage.getItem("formData");
-
-    setProductDetails(JSON.parse(formData))
-  },[])
-  useEffect(()=>{
-    window.localStorage.setItem("formData",JSON.stringify(productDetails));
-  })
-  
-  
  
 
   return (
