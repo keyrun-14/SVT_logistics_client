@@ -56,20 +56,20 @@ function handlingInput(e){
            :productDetails.Import_export==="Import"?
                       <div className="input-text-fields-each">
                       <div>
-                        <label><b>SB_NO</b></label>
+                        <label><b>BE_NO</b></label>
                       </div>
                       <div>
-                        <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.SB_NO} name="SB_NO" value={productDetails.SB_NO } required/>
+                        <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.BE_NO} name="SB_NO" value={productDetails.SB_NO } required/>
                       </div>
                   
                     </div>
                     
              :<div className="input-text-fields-each">
               <div>
-                <label><b>BE_NO</b></label>
+                <label><b>SB_NO</b></label>
               </div>
               <div>
-                <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.BE_NO} name="BE_NO" value={productDetails.BE_NO} required />
+                <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.SB_NO} name="BE_NO" value={productDetails.BE_NO} required />
               </div>
               
             </div>}

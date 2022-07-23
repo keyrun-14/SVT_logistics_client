@@ -66,6 +66,7 @@ const FormTable = () => {
                   <td>{val.FROM}</td>
                   <td>{val.TO}</td>
                   <td>{val.FROM_CONTAINER}</td>
+                  <td>{val.TO_CONTAINER}</td>
                   <td>{val.PACKS}</td>
                   <td>{val.CONTAINER_SIZE}</td>
                   <td>{val.FILLING_DETAILS}</td>
