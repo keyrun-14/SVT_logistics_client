@@ -19,6 +19,12 @@ function handlingInput(e){
   }
   function registration_submission(e){
     e.preventDefault();
+  if(productDetails.Import_export==="Import"){
+    productDetails["SB_NO"]=""
+  }
+  else{
+    productDetails["BE_NO"]=""
+  }
      alert('A form was submitted: ' + JSON.stringify(productDetails));
 
     fetch('https://svt-logistics-server.herokuapp.com/FormDetails', 
@@ -37,7 +43,7 @@ function handlingInput(e){
   return (
     <div className="Form">
       <div className="heading">
-        <h1>SVT CFS POINT BOOK</h1>
+        <p>SVT CFS POINT BOOK</p>
       </div>
       <form onSubmit={(e)=>registration_submission(e)}>
       <div className="upper-part">
@@ -59,7 +65,7 @@ function handlingInput(e){
                         <label><b>BE_NO</b></label>
                       </div>
                       <div>
-                        <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.BE_NO} name="SB_NO" value={productDetails.SB_NO } required/>
+                        <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.BE_NO} name="BE_NO" value={productDetails.BE_NO } required/>
                       </div>
                   
                     </div>
@@ -69,7 +75,7 @@ function handlingInput(e){
                 <label><b>SB_NO</b></label>
               </div>
               <div>
-                <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.SB_NO} name="BE_NO" value={productDetails.BE_NO} required />
+                <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.SB_NO} name="SB_NO" value={productDetails.SB_NO} required />
               </div>
               
             </div>}

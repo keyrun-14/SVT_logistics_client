@@ -29,7 +29,9 @@ const FormTable = () => {
        
         <table className="content-table">
           <thead>
-            <tr><th>DATE</th>
+            <tr>
+            <th>S.No:</th>
+              <th>DATE</th>
               <th>SB_NO</th>              
               <th>BE_NO</th>
               <th>CHA</th>
@@ -55,6 +57,7 @@ const FormTable = () => {
             return (
               <tbody>
                 <tr key={key}>
+                <td>{key+1}</td>
                   <td>{val.DATE}</td>
                   <td>{val.SB_NO}</td>
                   <td>{val.BE_NO}</td>
