@@ -53,7 +53,7 @@ function handlingInput(e){
               <div>
                 <label><b>DATE : </b></label>
               </div>
-              <div>
+              <div className="input-field">
                 <input onChange={(e)=>handlingInput(e)} type="date" placeholder={productDetails.DATE} name="DATE" value={productDetails.DATE} required/>
               </div>
             </div>
@@ -64,8 +64,8 @@ function handlingInput(e){
                       <div>
                         <label><b>BE_NO</b></label>
                       </div>
-                      <div>
-                        <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.BE_NO} name="BE_NO" value={productDetails.BE_NO } required/>
+                      <div className="input-field">
+                        <input  onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.BE_NO} name="BE_NO" value={productDetails.BE_NO } required/>
                       </div>
                   
                     </div>
@@ -74,7 +74,7 @@ function handlingInput(e){
               <div>
                 <label><b>SB_NO</b></label>
               </div>
-              <div>
+              <div className="input-field">
                 <input onChange={(e)=>handlingInput(e)} type="number" placeholder={productDetails.SB_NO} name="SB_NO" value={productDetails.SB_NO} required />
               </div>
               
@@ -85,7 +85,7 @@ function handlingInput(e){
               <div>
                 <label><b>CHA</b></label>
               </div>
-              <div>
+              <div className="input-field">
                 <input onChange={(e)=>handlingInput(e)} type="text"  name="CHA" value={productDetails.CHA} required/>
               </div>
             </div>
@@ -93,7 +93,7 @@ function handlingInput(e){
               <div>
                 <label><b>LINER</b></label>
               </div>
-              <div>
+              <div className="input-field">
                 <input onChange={(e)=>handlingInput(e)} type="text" name="LINER" value={productDetails.LINER} required/>
               </div>
             </div>
@@ -101,7 +101,7 @@ function handlingInput(e){
               <div>
                 <label><b>CARGO</b></label>
               </div>
-              <div>
+              <div className="input-field">
                 <input onChange={(e)=>handlingInput(e)} type="text" placeholder={productDetails.CARGO} name="CARGO" value={productDetails.CARGO}required />
               </div>
             </div>
@@ -109,7 +109,7 @@ function handlingInput(e){
               <div>
                 <label><b>PACK WEIGHT(KG)</b></label>
               </div>
-              <div>
+              <div className="input-field">
                 <input onChange={(e)=>handlingInput(e)} type="number" name= "PACK_WEIGHT" value={productDetails.PACK_WEIGHT} required/>
               </div>
             </div>
@@ -117,7 +117,7 @@ function handlingInput(e){
               <div>
                 <label><b>LABOUR</b></label>
               </div>
-              <div>
+              <div className="input-field">
                 <input onChange={(e)=>handlingInput(e)} type="text" name="LABOUR" value={productDetails.LABOUR} required/>
               </div>
             </div>
@@ -125,7 +125,7 @@ function handlingInput(e){
               <div>
                 <label><b>TYPE OF OPERATION</b></label>
               </div>
-              <div>
+              <div className="input-field">
                 <input onChange={(e)=>handlingInput(e)} type="text" name= "TYPE_OF_OPERATION" value={productDetails.TYPE_OF_OPERATION} required/>
               </div>
             </div>
@@ -227,7 +227,7 @@ function handlingInput(e){
               <label><b>CONTAINER SIZE</b></label>
             </div>
             <div>
-              <select onChange={(e)=>handlingInput(e)}name="CONTAINER_SIZE">
+              <select onChange={(e)=>handlingInput(e)} name="CONTAINER_SIZE">
                 <option name="CONTAINER_SIZE" value="0">0</option>
                 <option name="CONTAINER_SIZE" value="20">20</option>
                 <option name="CONTAINER_SIZE" value="40">40</option>

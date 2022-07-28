@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./FormData.css";
+import Search from "./Search";
 const FormTable = () => {
   const [data, setData] = useState([]);
+ const [search, setSearch] = useState([]);
+
   useEffect(() => {
     const url = "https://svt-logistics-server.herokuapp.com/";
 
@@ -19,12 +22,16 @@ const FormTable = () => {
 
     fetchData();
   }, []);
-  console.log(data);
+
+
   return (
     <>
       <div className="FormTable">
         <div className="add-data">
         <Link to="/" className="add-data">Add Data</Link>
+        </div>
+        <div>
+          <Search />
         </div>
        
         <table className="content-table">
